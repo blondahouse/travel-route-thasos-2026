@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Route Thasos 2026</title>
+  <meta name="description" content="Черновик маршрута Chișinău — Romania — Transylvania — Thasos, 21–26 September 2026." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #17213a;
+      --paper: #f8fafc;
+      --paper-2: #eef2ff;
+      --text: #172033;
+      --muted: #64748b;
+      --line: rgba(15, 23, 42, .12);
+      --accent: #db7c26;
+      --accent-2: #2563eb;
+      --forest: #2f6f4e;
+      --sea: #0f8ea8;
+      --danger: #9f1239;
+      --shadow: 0 18px 45px rgba(15, 23, 42, .16);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 5%, rgba(219, 124, 38, .20), transparent 28rem),
+        radial-gradient(circle at 92% 10%, rgba(15, 142, 168, .18), transparent 27rem),
+        linear-gradient(180deg, #f8fafc 0%, #eef2ff 42%, #f8fafc 100%);
+    }
+
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(248, 250, 252, .82);
+      border-bottom: 1px solid rgba(15, 23, 42, .08);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--sea));
+      color: white;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .18);
+    }
+    .navlinks {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 14px;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: #334155;
+      padding: 8px 11px;
+      border-radius: 999px;
+    }
+    .navlinks a:hover { background: rgba(15, 23, 42, .07); }
+
+    .hero {
+      padding: 70px 0 38px;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(15,23,42,.94), rgba(23,33,58,.80)),
+        radial-gradient(circle at 15% 20%, rgba(219,124,38,.55), transparent 20rem),
+        radial-gradient(circle at 85% 15%, rgba(15,142,168,.55), transparent 22rem);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: end;
+    }
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: rgba(255,255,255,.78);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(40px, 6vw, 78px);
+      line-height: .94;
+      letter-spacing: -.07em;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(17px, 2.2vw, 22px);
+      line-height: 1.55;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card b { display: block; margin-bottom: 8px; font-size: 18px; }
+    .hero-card p { margin: 0 0 14px; color: rgba(255,255,255,.74); line-height: 1.45; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.13);
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    main { padding: 44px 0 80px; }
+    section { margin: 0 0 48px; scroll-margin-top: 86px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -.045em;
+      color: #111827;
+    }
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(15, 23, 42, .08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-pad { padding: 24px; }
+
+    .route-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+    .day-chip {
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid var(--line);
+      min-height: 164px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .day-chip small { color: var(--muted); font-weight: 700; }
+    .day-chip strong { display: block; margin: 6px 0 8px; line-height: 1.2; }
+    .day-chip span { color: var(--muted); font-size: 13px; line-height: 1.35; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+    .day {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: 0 8px 28px rgba(15,23,42,.08);
+    }
+    .date {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .day h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .meta {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 12px;
+      color: #334155;
+      font-size: 14px;
+    }
+    .meta b { display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 4px; }
+    .steps { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .steps li {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(15,23,42,.08);
+      line-height: 1.45;
+    }
+    .time { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .option-btn {
+      border: 1px solid rgba(15,23,42,.10);
+      background: white;
+      border-radius: 20px;
+      padding: 14px;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(15,23,42,.08);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .option-btn:hover { transform: translateY(-2px); }
+    .option-btn.active {
+      border-color: rgba(219,124,38,.85);
+      box-shadow: 0 18px 40px rgba(219,124,38,.18);
+    }
+    .option-art {
+      height: 136px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      color: white;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+    .option-art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, transparent 15%, rgba(0,0,0,.68) 100%),
+        var(--art-bg, linear-gradient(135deg, #1f2937, #64748b));
+    }
+    .art-castle { --art-bg: radial-gradient(circle at 60% 25%, #7f1d1d 0 7%, transparent 8%), linear-gradient(135deg, #1f2937, #7f1d1d); }
+    .art-dino { --art-bg: radial-gradient(circle at 22% 30%, #fbbf24 0 8%, transparent 9%), linear-gradient(135deg, #14532d, #65a30d); }
+    .art-bear { --art-bg: radial-gradient(circle at 70% 25%, #f59e0b 0 7%, transparent 8%), linear-gradient(135deg, #292524, #57534e); }
+    .art-mountain { --art-bg: radial-gradient(circle at 75% 20%, #bae6fd 0 8%, transparent 9%), linear-gradient(135deg, #0f766e, #1d4ed8); }
+    .option-btn h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -.02em; }
+    .option-btn p { margin: 0; color: var(--muted); line-height: 1.35; font-size: 13px; }
+
+    .option-detail { display: none; }
+    .option-detail.active { display: block; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .info-box {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      padding: 18px;
+    }
+    .info-box h4 { margin: 0 0 10px; font-size: 16px; }
+    .info-box p, .info-box li { color: #475569; line-height: 1.55; }
+    .info-box p { margin: 0 0 12px; }
+    .info-box ul { margin: 0; padding-left: 18px; }
+    .score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+    .score { background: white; border: 1px solid var(--line); padding: 12px; border-radius: 14px; }
+    .score b { color: var(--accent); font-size: 22px; }
+    .score span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .plan {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(15,23,42,.08);
+    }
+    .plan-head {
+      padding: 18px;
+      color: white;
+      background: linear-gradient(135deg, #1f2937, #334155);
+    }
+    .plan-head.a { background: linear-gradient(135deg, #1d4ed8, #0f766e); }
+    .plan-head.b { background: linear-gradient(135deg, #7f1d1d, #db7c26); }
+    .plan-head h3 { margin: 0 0 6px; font-size: 22px; }
+    .plan-head p { margin: 0; color: rgba(255,255,255,.78); line-height: 1.45; }
+    .plan-body { padding: 18px; }
+
+    .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .btn-link.secondary { background: #e2e8f0; color: #1f2937; }
+    .btn-link.blue { background: var(--accent-2); }
+    .btn-link.orange { background: var(--accent); }
+
+    .compact-days { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .footer {
+      padding: 36px 0 52px;
+      color: rgba(255,255,255,.72);
+      background: #0f172a;
+      font-size: 14px;
+    }
+    .footer a { color: white; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .detail-grid, .plan-grid, .compact-days { grid-template-columns: 1fr; }
+      .route-strip, .options-grid { grid-template-columns: repeat(2, 1fr); }
+      .day { grid-template-columns: 1fr; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { justify-content: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .route-strip, .options-grid { grid-template-columns: 1fr; }
+      .steps li { grid-template-columns: 70px 1fr; }
+      .score-row { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Route home">
+        <span class="brand-badge">✦</span>
+        <span>Route · Thasos 2026</span>
+      </a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#overview">Маршрут</a>
+        <a href="#brasov">Brașov</a>
+        <a href="#transfagarasan">Transfăgărășan</a>
+        <a href="#thasos-road">До Thasos</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">21–26 September 2026 · draft itinerary</div>
+        <h1>Chișinău → Transylvania → Thasos</h1>
+        <p class="lead">Черновик первой части путешествия для Марины, Саши и родителей: через Румынию, Brașov, Dracula/Transylvania day, Transfăgărășan и затем компактный переезд к острову Thasos.</p>
+      </div>
+      <aside class="hero-card">
+        <b>Логика маршрута</b>
+        <p>Сначала — мягкий въезд в Румынию и Карпаты. Затем отдельный день в Brașov для темы Дракулы. Потом — Transfăgărășan как план А и Rucăr–Bran corridor как запасной красивый маршрут. Болгарию ужимаем до транзита к Греции.</p>
+        <div class="pill-row">
+          <span class="pill">🏰 Bran Castle обязателен</span>
+          <span class="pill">⛰️ Transfăgărășan обязателен, если открыт</span>
+          <span class="pill">🌊 Thasos с 26.09</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section id="overview">
+      <div class="section-head">
+        <h2>Общий маршрут</h2>
+        <p class="section-note">Текущая версия после перекомпоновки: добавляем отдельный день для Brașov/Bran и сокращаем болгарскую часть до практичного переезда к Thasos.</p>
+      </div>
+      <div class="route-strip">
+        <div class="day-chip"><small>21.09</small><strong>Chișinău → Iași → Piatra Neamț</strong><span>Прилёт, граница, поздний обед в Iași, ночёвка у Карпат.</span></div>
+        <div class="day-chip"><small>22.09</small><strong>Piatra Neamț → Bicaz → Red Lake → Brașov</strong><span>Ущелье, озеро, въезд в Трансильванию.</span></div>
+        <div class="day-chip"><small>23.09</small><strong>Brașov / Bran day</strong><span>Замок Дракулы + один из четырёх вариантов второй половины дня.</span></div>
+        <div class="day-chip"><small>24.09</small><strong>Brașov → Transfăgărășan → Curtea de Argeș</strong><span>План А: горная дорога. План B: Rucăr–Bran corridor.</span></div>
+        <div class="day-chip"><small>25.09</small><strong>Curtea de Argeș → Sandanski / Melnik</strong><span>Длинный, но прямой транзит на юг Болгарии.</span></div>
+        <div class="day-chip"><small>26.09</small><strong>Sandanski / Melnik → Keramoti → Thasos</strong><span>Граница, паром из Keramoti, заселение на острове.</span></div>
+      </div>
+    </section>
+
+    <section id="days">
+      <div class="section-head">
+        <h2>Таймлайн по дням</h2>
+        <p class="section-note">Время, километраж и длительность переездов пока ориентировочные. Перед бронированием нужно уточнить по Google Maps/Waze и по фактической ситуации на границах.</p>
+      </div>
+      <div class="timeline">
+        <article class="day">
+          <div class="date">21.09 · Day 1</div>
+          <div>
+            <h3>Chișinău → Iași → Piatra Neamț</h3>
+            <div class="meta-grid">
+              <div class="meta"><b>Характер</b>Логистический старт</div>
+              <div class="meta"><b>Финал</b>Piatra Neamț</div>
+              <div class="meta"><b>Идея</b>Не тратить день на Chișinău</div>
+            </div>
+            <ul class="steps">
+              <li><span class="time">12:00</span><span>Прилёт Марины и Саши в Chișinău International Airport.</span></li>
+              <li><span class="time">13:00</span><span>Выезд из аэропорта после багажа и встречи с родителями.</span></li>
+              <li><span class="time">13:00–16:00</span><span>Переезд Chișinău → Iași, примерно 150–170 км / 2,5–3,5 часа с учётом границы.</span></li>
+              <li><span class="time">16:00–17:30</span><span>Поздний обед и короткая прогулка в Iași: Palace of Culture снаружи, центр, кофе.</span></li>
+              <li><span class="time">17:30–20:00</span><span>Переезд Iași → Piatra Neamț, примерно 130–140 км / 2–2,5 часа.</span></li>
+              <li><span class="time">20:00</span><span>Заселение, ужин, спокойный вечер.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="date">22.09 · Day 2</div>
+          <div>
+            <h3>Piatra Neamț → Bicaz Gorges → Red Lake → Brașov</h3>
+            <div class="meta-grid">
+              <div class="meta"><b>Характер</b>Карпаты и природа</div>
+              <div class="meta"><b>Финал</b>Brașov</div>
+              <div class="meta"><b>Ключевые точки</b>Bicaz Gorges · Red Lake</div>
+            </div>
+            <ul class="steps">
+              <li><span class="time">08:00–09:00</span><span>Завтрак в Piatra Neamț.</span></li>
+              <li><span class="time">09:00–10:30</span><span>Переезд к Bicaz Gorges, примерно 60–70 км / 1–1,5 часа.</span></li>
+              <li><span class="time">10:30–11:30</span><span>Bicaz Gorges: остановки в ущелье, фото, короткая прогулка.</span></li>
+              <li><span class="time">11:30–12:00</span><span>Переезд к Red Lake / Lacu Roșu.</span></li>
+              <li><span class="time">12:00–14:00</span><span>Red Lake: прогулка у озера и обед.</span></li>
+              <li><span class="time">14:00–19:00</span><span>Переезд Red Lake → Brașov, примерно 230–260 км / 4–5 часов с короткими остановками.</span></li>
+              <li><span class="time">19:00–21:00</span><span>Заселение, ужин и короткая вечерняя прогулка по старому центру Brașov.</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="brasov">
+      <div class="section-head">
+        <h2>23.09 · Brașov / Bran day</h2>
+        <p class="section-note">Bran Castle — обязательная точка. Ниже четыре варианта второй половины дня. Нажми на карточку, чтобы открыть подробности.</p>
+      </div>
+
+      <div class="options-grid" role="tablist" aria-label="Brașov day options">
+        <button class="option-btn active" data-option="oldtown" role="tab" aria-selected="true">
+          <div class="option-art art-castle">Bran + Old Brașov</div>
+          <h3>Спокойно и тематично</h3>
+          <p>Замок Дракулы + старый город без перегруза.</p>
+        </button>
+        <button class="option-btn" data-option="dino" role="tab" aria-selected="false">
+          <div class="option-art art-dino">Bran + Dino Parc</div>
+          <h3>Максимально детский день</h3>
+          <p>Замок + лесной парк динозавров в Râșnov.</p>
+        </button>
+        <button class="option-btn" data-option="bear" role="tab" aria-selected="false">
+          <div class="option-art art-bear">Libearty + Bran</div>
+          <h3>Животные и эмоция</h3>
+          <p>Спасённые медведи + замок Дракулы.</p>
+        </button>
+        <button class="option-btn" data-option="mountain" role="tab" aria-selected="false">
+          <div class="option-art art-mountain">Bran + Poiana/Tâmpa</div>
+          <h3>Горы и виды</h3>
+          <p>Лучше для взрослых: замок, курорт, панорамы.</p>
+        </button>
+      </div>
+
+      <div class="card card-pad">
+        <div id="oldtown" class="option-detail active">
+          <div class="detail-grid">
+            <div class="info-box">
+              <h4>Что это за вариант</h4>
+              <p>Самый спокойный и тематически чистый день. Bran Castle даёт Саше главный образ «замка Дракулы», а старый Brașov завершает день средневековой атмосферой Трансильвании.</p>
+              <ul>
+                <li>Bran Castle: башни, лестницы, внутренний двор, сувениры.</li>
+                <li>Old Brașov: Piața Sfatului, Black Church снаружи, Strada Sforii.</li>
+                <li>Минимальный риск по логистике и усталости.</li>
+              </ul>
+              <div class="score-row">
+                <div class="score"><b>8/10</b><span>для Саши</span></div>
+                <div class="score"><b>8/10</b><span>для взрослых</span></div>
+                <div class="score"><b>низкая</b><span>нагрузка</span></div>
+              </div>
+            </div>
+            <div class="info-box">
+              <h4>Пример расписания</h4>
+              <ul>
+                <li>08:30–09:30 — завтрак в Brașov.</li>
+                <li>09:30–10:30 — переезд Brașov → Bran.</li>
+                <li>10:30–13:00 — Bran Castle.</li>
+                <li>13:00–14:30 — обед в Bran.</li>
+                <li>14:30–15:30 — возвращение в Brașov.</li>
+                <li>15:30–18:30 — старый центр Brașov.</li>
+                <li>18:30–21:00 — ужин и вечерняя прогулка.</li>
+              </ul>
+              <div class="link-row">
+                <a class="btn-link orange" href="https://www.google.com/maps/search/?api=1&query=Bran%20Castle" target="_blank" rel="noreferrer">Bran на карте</a>
+                <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Piata%20Sfatului%20Brasov" target="_blank" rel="noreferrer">Old Brașov</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dino" class="option-detail">
+          <div class="detail-grid">
+            <div class="info-box">
+              <h4>Что это за вариант</h4>
+              <p>Самый детский и развлекательный вариант: сначала замок Дракулы, затем Dino Parc Râșnov — лесной парк с большими моделями динозавров, прогулочным маршрутом и интерактивными зонами.</p>
+              <ul>
+                <li>Хорошая «разрядка» после музейного формата Bran Castle.</li>
+                <li>Логистически удобно: Râșnov находится между Bran и Brașov.</li>
+                <li>Старый Brașov остаётся вечерней прогулкой.</li>
+              </ul>
+              <div class="score-row">
+                <div class="score"><b>9/10</b><span>для Саши</span></div>
+                <div class="score"><b>7/10</b><span>для взрослых</span></div>
+                <div class="score"><b>средняя</b><span>нагрузка</span></div>
+              </div>
+            </div>
+            <div class="info-box">
+              <h4>Пример расписания</h4>
+              <ul>
+                <li>08:30–09:30 — завтрак в Brașov.</li>
+                <li>09:30–10:30 — переезд Brașov → Bran.</li>
+                <li>10:30–13:00 — Bran Castle.</li>
+                <li>13:00–14:00 — обед в Bran или Râșnov.</li>
+                <li>14:00–14:30 — переезд к Dino Parc.</li>
+                <li>14:30–17:30 — Dino Parc Râșnov.</li>
+                <li>18:30–21:00 — ужин и короткая прогулка в Brașov.</li>
+              </ul>
+              <div class="link-row">
+                <a class="btn-link orange" href="https://www.google.com/maps/search/?api=1&query=Bran%20Castle" target="_blank" rel="noreferrer">Bran на карте</a>
+                <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Dino%20Parc%20Rasnov" target="_blank" rel="noreferrer">Dino Parc</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="bear" class="option-detail">
+          <div class="detail-grid">
+            <div class="info-box">
+              <h4>Что это за вариант</h4>
+              <p>Более природный и эмоциональный день: Libearty Bear Sanctuary в Zărnești — не зоопарк, а sanctuary для спасённых медведей. Обычно посещение проходит как guided tour.</p>
+              <ul>
+                <li>Сильный вариант, если Саша любит животных.</li>
+                <li>Нужно заранее проверить расписание и забронировать слот.</li>
+                <li>После sanctuary — Bran Castle как сказочная/дракульская кульминация.</li>
+              </ul>
+              <div class="score-row">
+                <div class="score"><b>8–9/10</b><span>если любит животных</span></div>
+                <div class="score"><b>8/10</b><span>для взрослых</span></div>
+                <div class="score"><b>средний</b><span>риск по слотам</span></div>
+              </div>
+            </div>
+            <div class="info-box">
+              <h4>Пример расписания</h4>
+              <ul>
+                <li>08:00–08:45 — завтрак в Brașov.</li>
+                <li>08:45–09:30 — переезд Brașov → Zărnești.</li>
+                <li>10:00–12:00 — Libearty Bear Sanctuary.</li>
+                <li>12:00–12:45 — переезд Zărnești → Bran.</li>
+                <li>12:45–14:00 — обед.</li>
+                <li>14:00–16:30 — Bran Castle.</li>
+                <li>18:30–21:00 — старый Brașov и ужин.</li>
+              </ul>
+              <div class="link-row">
+                <a class="btn-link orange" href="https://www.google.com/maps/search/?api=1&query=Libearty%20Bear%20Sanctuary%20Zarnesti" target="_blank" rel="noreferrer">Libearty на карте</a>
+                <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Bran%20Castle" target="_blank" rel="noreferrer">Bran Castle</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="mountain" class="option-detail">
+          <div class="detail-grid">
+            <div class="info-box">
+              <h4>Что это за вариант</h4>
+              <p>Замок + горы + виды. Poiana Brașov — горный курорт рядом с городом; Tâmpa — гора прямо над старым Brașov со смотровой площадкой на город.</p>
+              <ul>
+                <li>Лучший вариант для взрослых и красивых фотографий.</li>
+                <li>Гибко меняется по погоде: если плохая видимость, можно оставить только старый город.</li>
+                <li>Менее детский, чем Dino Parc, но очень атмосферный.</li>
+              </ul>
+              <div class="score-row">
+                <div class="score"><b>7/10</b><span>для Саши</span></div>
+                <div class="score"><b>9/10</b><span>для взрослых</span></div>
+                <div class="score"><b>погода</b><span>главный фактор</span></div>
+              </div>
+            </div>
+            <div class="info-box">
+              <h4>Пример расписания</h4>
+              <ul>
+                <li>08:30–09:30 — завтрак в Brașov.</li>
+                <li>09:30–10:30 — переезд Brașov → Bran.</li>
+                <li>10:30–13:00 — Bran Castle.</li>
+                <li>13:00–14:30 — обед в Bran или Poiana Brașov.</li>
+                <li>14:30–16:00 — Poiana Brașov / короткая прогулка.</li>
+                <li>16:30–18:00 — Tâmpa viewpoint, если работает канатка и хорошая погода.</li>
+                <li>18:30–21:00 — ужин в старом Brașov.</li>
+              </ul>
+              <div class="link-row">
+                <a class="btn-link orange" href="https://www.google.com/maps/search/?api=1&query=Poiana%20Brasov" target="_blank" rel="noreferrer">Poiana Brașov</a>
+                <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Tampa%20Brasov%20viewpoint" target="_blank" rel="noreferrer">Tâmpa view</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="transfagarasan">
+      <div class="section-head">
+        <h2>24.09 · Transfăgărășan</h2>
+        <p class="section-note">Transfăgărășan остаётся обязательной точкой, если дорога открыта и погода позволяет. Если перевал закрыт или видимость плохая — не героизируем, а сохраняем красоту через Rucăr–Bran corridor.</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan">
+          <div class="plan-head a">
+            <h3>План А · Brașov → Cârțișoara → Transfăgărășan → Curtea de Argeș</h3>
+            <p>Главная горная кульминация маршрута: северный подъём, Bâlea Lake, панорамные виды, Vidraru Dam.</p>
+          </div>
+          <div class="plan-body">
+            <ul class="steps">
+              <li><span class="time">08:00–09:00</span><span>Завтрак в Brașov.</span></li>
+              <li><span class="time">09:00–11:30</span><span>Brașov → Cârțișoara, примерно 130–150 км / 2–2,5 часа.</span></li>
+              <li><span class="time">11:30–12:00</span><span>Техническая пауза: вода, туалет, перекус, проверка погоды.</span></li>
+              <li><span class="time">12:00–15:30</span><span>Северный Transfăgărășan: Bâlea Waterfall, Bâlea Lake, panoramic viewpoints, лёгкий обед/пикник.</span></li>
+              <li><span class="time">15:30–18:30</span><span>Южная часть: Capra, Vidraru Dam, остановки по самочувствию.</span></li>
+              <li><span class="time">18:30–20:00</span><span>Доезд до Curtea de Argeș, заселение, ужин.</span></li>
+            </ul>
+            <div class="link-row">
+              <a class="btn-link blue" href="https://www.google.com/maps/search/?api=1&query=Transfagarasan%20Panoramic%20View" target="_blank" rel="noreferrer">Panoramic View</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Balea%20Lake" target="_blank" rel="noreferrer">Bâlea Lake</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Vidraru%20Dam" target="_blank" rel="noreferrer">Vidraru Dam</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-head b">
+            <h3>План B · Rucăr–Bran corridor</h3>
+            <p>Если Transfăgărășan закрыт или погода плохая: горные деревни, пасторальная Трансильвания и более спокойная дорога.</p>
+          </div>
+          <div class="plan-body">
+            <ul class="steps">
+              <li><span class="time">08:30–09:30</span><span>Завтрак в Brașov, проверка статуса DN7C и погоды на Bâlea Lake.</span></li>
+              <li><span class="time">09:30–10:30</span><span>Brașov → Bran / Moieciu area. Можно сделать короткую остановку, если накануне не хватило времени.</span></li>
+              <li><span class="time">10:30–13:00</span><span>Rucăr–Bran corridor: холмы, деревни, виды на Piatra Craiului / Bucegi, фото-остановки.</span></li>
+              <li><span class="time">13:00–14:30</span><span>Обед в районе Rucăr / Câmpulung.</span></li>
+              <li><span class="time">14:30–18:30</span><span>Переезд через Câmpulung / Pitești area к Curtea de Argeș.</span></li>
+              <li><span class="time">18:30–20:30</span><span>Заселение, ужин, спокойный вечер.</span></li>
+            </ul>
+            <div class="link-row">
+              <a class="btn-link orange" href="https://www.google.com/maps/search/?api=1&query=Rucar%20Bran%20Corridor" target="_blank" rel="noreferrer">Rucăr–Bran</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Curtea%20de%20Arges" target="_blank" rel="noreferrer">Curtea de Argeș</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="thasos-road">
+      <div class="section-head">
+        <h2>25–26.09 · дорога до Thasos</h2>
+        <p class="section-note">После насыщенной Румынии Болгарию ужимаем. Цель — без лишних крюков добраться до юга Болгарии и на следующий день спокойно перейти в Грецию и на паром.</p>
+      </div>
+      <div class="compact-days">
+        <article class="day">
+          <div class="date">25.09 · Day 5</div>
+          <div>
+            <h3>Curtea de Argeș → Sandanski / Melnik</h3>
+            <div class="meta-grid">
+              <div class="meta"><b>Характер</b>Длинный транзит</div>
+              <div class="meta"><b>Финал</b>Sandanski / Melnik</div>
+              <div class="meta"><b>Цель</b>Подойти к границе с Грецией</div>
+            </div>
+            <ul class="steps">
+              <li><span class="time">08:00–09:00</span><span>Завтрак в Curtea de Argeș.</span></li>
+              <li><span class="time">09:00–13:00</span><span>Переезд в сторону юга Румынии: Pitești / Craiova / Calafat–Vidin. Точные точки уточнить по дорожной ситуации.</span></li>
+              <li><span class="time">13:00–14:30</span><span>Обед по дороге: Craiova / Vidin / roadside stop.</span></li>
+              <li><span class="time">14:30–19:30</span><span>Переезд через Болгарию к Sandanski или Melnik. Это самый транзитный день маршрута.</span></li>
+              <li><span class="time">19:30–21:00</span><span>Заселение и ужин. Sandanski — практичнее; Melnik — атмосфернее.</span></li>
+            </ul>
+            <div class="link-row">
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Sandanski%20Bulgaria" target="_blank" rel="noreferrer">Sandanski</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Melnik%20Bulgaria" target="_blank" rel="noreferrer">Melnik</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="date">26.09 · Day 6</div>
+          <div>
+            <h3>Sandanski / Melnik → Keramoti → Thasos</h3>
+            <div class="meta-grid">
+              <div class="meta"><b>Характер</b>Финальный переход к морю</div>
+              <div class="meta"><b>Паром</b>Keramoti → Limenas</div>
+              <div class="meta"><b>Финал</b>Thasos</div>
+            </div>
+            <ul class="steps">
+              <li><span class="time">08:00–09:00</span><span>Завтрак в Sandanski / Melnik.</span></li>
+              <li><span class="time">09:00–13:30</span><span>Переезд к Keramoti через Kulata / Promachonas border, примерно 230–270 км / 3,5–4,5 часа с учётом границы.</span></li>
+              <li><span class="time">13:30–15:00</span><span>Обед у моря в Keramoti и ожидание парома.</span></li>
+              <li><span class="time">15:00–16:00</span><span>Паром Keramoti → Limenas / Thasos, примерно 35–40 минут + ожидание.</span></li>
+              <li><span class="time">16:30–17:30</span><span>Доезд до выбранной базы и заселение.</span></li>
+              <li><span class="time">17:30–21:00</span><span>Первая прогулка к морю и ужин на острове.</span></li>
+            </ul>
+            <div class="link-row">
+              <a class="btn-link blue" href="https://www.google.com/maps/search/?api=1&query=Keramoti%20Ferry%20to%20Thassos" target="_blank" rel="noreferrer">Keramoti ferry</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Limenas%20Thasos" target="_blank" rel="noreferrer">Limenas</a>
+              <a class="btn-link secondary" href="https://www.google.com/maps/search/?api=1&query=Golden%20Beach%20Thasos" target="_blank" rel="noreferrer">Golden Beach</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>Draft status:</strong> маршрутный черновик для обсуждения. Следующие шаги: выбрать вариант дня в Brașov, проверить доступность Transfăgărășan ближе к поездке, уточнить финальные ночёвки и базу на Thasos.</p>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.option-btn');
+    const details = document.querySelectorAll('.option-detail');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.dataset.option;
+        buttons.forEach((b) => {
+          b.classList.toggle('active', b === button);
+          b.setAttribute('aria-selected', b === button ? 'true' : 'false');
+        });
+        details.forEach((d) => d.classList.toggle('active', d.id === id));
+      });
+    });
+  </script>
+</body>
+</html>
