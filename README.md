@@ -10,8 +10,8 @@ Interactive mini-site for the draft route:
 - 22.09 — Piatra Neamț → Bicaz Gorges → Red Lake → Brașov
 - 23.09 — Brașov / Bran day with 4 options
 - 24.09 — Transfăgărășan Plan A / Rucăr–Bran Plan B
-- 25.09 — Curtea de Argeș → Sandanski / Melnik
-- 26.09 — Sandanski / Melnik → Keramoti → Thasos
+- 25.09 — Curtea de Argeș → Veliko Tarnovo lunch stop → Stara Zagora
+- 26.09 — Stara Zagora → Perperikon / Kardzhali lunch stop → Keramoti → Golden Beach, Thasos
 
 ## GitHub Pages
 
