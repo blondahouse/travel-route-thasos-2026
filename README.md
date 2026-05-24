@@ -10,8 +10,8 @@ Interactive mini-site for the full draft route:
 - 22.09 — Piatra Neamț → Bicaz Gorges → Red Lake → Brașov
 - 23.09 — Brașov / Bran day with 4 options
 - 24.09 — Transfăgărășan Plan A / Rucăr–Bran Plan B
-- 25.09 — Curtea de Argeș → Veliko Tarnovo lunch stop → Stara Zagora
-- 26.09 — Stara Zagora → Perperikon / Kardzhali lunch stop → Keramoti → Golden Beach, Thasos
+- 25.09 — Curtea de Argeș → Belogradchik lunch stop → Sofia
+- 26.09 — Sofia → Melnik lunch stop → Keramoti → Golden Beach, Thasos
 - 27.09 — Golden Beach recovery day
 - 28.09 — Golden Beach → Panagia → Limenas → Golden Beach
 - 29.09 — Paradise Beach → Aliki → Archangel Michael Monastery
