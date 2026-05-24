@@ -1,8 +1,8 @@
 # Travel Route Thasos 2026
 
-Interactive mini-site for the draft route:
+Interactive mini-site for the full draft route:
 
-**Chișinău → Romania / Transylvania → Transfăgărășan → Thasos**
+**Chișinău → Romania / Transylvania → Transfăgărășan → Thasos → Bucharest Airport**
 
 ## Current scope
 
@@ -12,6 +12,12 @@ Interactive mini-site for the draft route:
 - 24.09 — Transfăgărășan Plan A / Rucăr–Bran Plan B
 - 25.09 — Curtea de Argeș → Veliko Tarnovo lunch stop → Stara Zagora
 - 26.09 — Stara Zagora → Perperikon / Kardzhali lunch stop → Keramoti → Golden Beach, Thasos
+- 27.09 — Golden Beach recovery day
+- 28.09 — Golden Beach → Panagia → Limenas → Golden Beach
+- 29.09 — Paradise Beach → Aliki → Archangel Michael Monastery
+- 30.09–01.10 — Golden Beach final sea days
+- 02.10 — Golden Beach → Keramoti → central Bulgaria → Veliko Tarnovo area
+- 03.10 — Veliko Tarnovo area → Bucharest Henri Coandă Airport, flight at 18:00
 
 ## GitHub Pages
 
